@@ -8,18 +8,22 @@
 img{
   width:100%;
 }
+.row{
+  color:#7e909a;
+  
+}
 
 .pS{
-  
-  
+  font-family: 'Comic Neue', cursive;
+  color:#54c2cc;
 }
 
 .uC{
-  
-  
+  font-family: 'Comic Neue', cursive;
+  color:#20525c;
 }
 
 .cC{
-  
-
+  font-family: 'Comic Neue', cursive;
+  color:#20525c;
 }

@@ -1,3 +1,7 @@
+html{
+  margin-bottom: 40px;
+}
+
 .row {
   text-align: center;
 }
@@ -9,8 +13,8 @@ img{
   width:100%;
 }
 .row{
+  font-family: 'Comic Neue', cursive;
   color:#7e909a;
-  
 }
 
 .pS{
@@ -26,4 +30,9 @@ img{
 .cC{
   font-family: 'Comic Neue', cursive;
   color:#20525c;
+}
+
+.result{
+  margin-top: 30px;
+  color: red;
 }

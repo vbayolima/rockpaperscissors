@@ -1,13 +1,17 @@
+function handleWinner() {
+  $(".result").text("You win!");
+  $(".result").css("color", "green");
+}
 
+function handleTie() {
+  $(".result").text("It's a tie!");
+  $(".result").css("color", "orange");
+}
 
-// if (computerChoice === 1 && userChoice === 2) {
-// computer wins
-//}
-
-// y = 3*x + 1
-// x is always between 0 - 1
-// 3(0) + 1 = 1
-// 3(1) + 1 = 4
+function handleLoser() {
+  $(".result").text("You lose. Try again!");
+  $(".result").css("color", "red");
+}
 
 let globalNumber = 0;
 $(".play").click(function() {
@@ -18,6 +22,8 @@ $(".play").click(function() {
   $(".computerChoice").text(`computer choice is ${computerNumber}`);
 
   let userInput = $(".input").val();
+  userInput = userInput.toLowerCase();
+
   $(".userChoice").text(userInput);
 
   if (computerNumber === 1) {
@@ -29,60 +35,31 @@ $(".play").click(function() {
   if (computerNumber === 3) {
     $(".computerChoice").text("Paper");
   }
-  // Id suggest just worrying about "rock" or "Rock" to start with! then you can worry about upper / lowercase!
-  // also, will computerChoice ever be === to "Rock"? above we were checking it was 1, 2, or 3 right?
 
-  // one tip – "format this file" up top to make it clearer what is included in the "play" click handler
-  
-  // another thing – we can probably combine the two click handlers right? we probably don't need the first one anymore because we have this one now right?
-  // it might just make it more confusing
+  if (computerNumber === 1 && userInput == "rock") {
+    handleTie();
+  } else if (computerNumber === 1 && userInput === "paper") {
+    handleWinner();
+  } else if (computerNumber === 1 && userInput === "scissors") {
+    handleLoser();
+  } else if (computerNumber === 2 && userInput === "scissors") {
+    handleTie();
+  } else if (computerNumber === 2 && userInput === "paper") {
+    handleLoser();
+  } else if (computerNumber === 2 && userInput === "rock") {
+    handleWinner();
+  } else if (computerNumber === 3 && userInput === "paper") {
+    handleTie();
+  } else if (computerNumber === 3 && userInput === "rock") {
+    handleLoser();
+  } else if (computerNumber === 3 && userInput === "scissors") {
+    handleWinner();
+  } else {
+    $(".result").text(
+      "oops... looks like there's a mistake in your input. Try checking the image to make sure you spelled your input correctly. And make sure to use capital letters!"
+    );
+  }
 
-  //which click handler
-  
-  // the one on lines 1 through 5! yup!
-  
-  // nice! seeems like it's working?
-  if (computerNumber === 1 && userInput === "Rock") {
-    $(".result").text("It's a tie!");
-    $(".result").css('color', 'orange');
-  }
-  
-  if (computerNumber === 1 && userInput === "Paper"){
-    $(".result").text("You win!");
-  }
-  
-  if (computerNumber === 1 && userInput === "Scissors") {
-    $(".result").text("You lose. Try again!")
-  }
-  
-  
-    if (computerNumber === 2 && userInput === "Scissors") {
-    $(".result").text("It's a tie!");
-  }
-    if (computerNumber === 2 && userInput === "Paper"){
-    $(".result").text("You lose. Try again!");
-  }
-    if (computerNumber === 2 && userInput === "Rock") {
-    $(".result").text("You win!")
-  }
-  
-  
-      if (computerNumber === 3 && userInput === "Paper") {
-    $(".result").text("It's a tie!");
-  }
-      if (computerNumber === 3 && userInput === "Rock"){
-    $(".result").text("You lose. Try again!");
-  }
-      if (computerNumber === 3 && userInput === "Scissors") {
-    $(".result").text("You win!")
-  }
-  
-else{
-  $(".result").text("oops... looks like there's a mistake in your input. Try checking the image to make sure you spelled your input correctly. And make sure to use capital letters!")
-}
-  // we'll keep working on the else next week! I think the issue is the else will only apply to the if statement it's connected to
-  // so the one directly above.
-  // we probably need to link the if statements if we want the else to work! 
-  
+  // this refreshes the input bar
+  $(".input").val("");
 });
-

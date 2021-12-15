@@ -1,5 +1,6 @@
 html{
   margin-bottom: 40px;
+  background-color: #5478f0;
 }
 
 .row {
@@ -14,25 +15,30 @@ img{
 }
 .row{
   font-family: 'Comic Neue', cursive;
-  color:#7e909a;
+  color: #ff5e00;
 }
 
 .pS{
   font-family: 'Comic Neue', cursive;
-  color:#54c2cc;
+  color:#00ffbb;
 }
 
 .uC{
   font-family: 'Comic Neue', cursive;
-  color:#20525c;
+  color:#c8ff00;
 }
 
 .cC{
   font-family: 'Comic Neue', cursive;
-  color:#20525c;
+  color:#c8ff00;
 }
 
 .result{
   margin-top: 30px;
   color: red;
+}
+h1{
+  border: orange inset 10px;
+  margin-left: 20%;
+  margin-right: 20%;
 }
